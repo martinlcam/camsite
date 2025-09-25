@@ -15,7 +15,7 @@ export default function Home() {
         <div>It works!</div>
         <div>r/Master Hakxxor</div>
         <div>Furry Website</div>
-        
+        <div>Thank you Alex Ng</div>
 
 
 
