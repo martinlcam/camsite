@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div>
-      <main className="relative h-screen flex">
-        <div className="flex flex-col justify-center h-screen pl-[40vw] gap-0">
+      <main className="h-screen flex">
+        <div className="flex flex-col justify-center h-screen pl-[20vw] gap-0">
           <div className="flex gap-20 mb-8">
             <a
               href="https://github.com"
@@ -28,6 +28,9 @@ export default function Home() {
               />
             </a>
 
+            <div className="bg-[url('/landingpagevectors/Polygon1.svg')] bg-cover bg-center"></div>
+        
+
             <a
               href="https://www.instagram.com/_martincam_/"
               target="_blank"
@@ -46,21 +49,6 @@ export default function Home() {
           </div>
           <div id="titlePlate">Cam</div>
         </div>
-
-        <div
-          style={{
-            position: "absolute",
-            top: -50,
-            left: 1100,
-            width: "100%",
-            height: "100%",
-            transform: "rotate(-45deg)",
-            transformOrigin: "top left",
-            background: "#E79FFF",
-            borderRadius: "21.42px",
-            zIndex: -1,
-          }}
-        ></div>
       </main>
     </div>
   );
