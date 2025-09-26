@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#titlePlate {
+  font-family: var(--font-tallios);
+  font-size: 150px;
+  color: #000000
+}

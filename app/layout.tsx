@@ -5,14 +5,29 @@ import localFont from "next/font/local"
 
 const talios =localFont
 ({
-    src: "./talios.otf"
+    src: "./fonts/tallios-font/tallios.otf",
+    variable: "--font-tallios",
+    weight: "400",
+    style: "normal",
 })
 
 const calama =localFont
 ({
-    src: "./calama_new.ttf"
-})
+    src: "./fonts/Calama/Calama_new.ttf",
+    variable: "--font-calama",
+    weight: "400",
+    style: "normal",
+});
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${calama.className} antialiased`}
+        className={`${calama.className} ${talios.variable} antialiased`}
       >
         {children}
       </body>
