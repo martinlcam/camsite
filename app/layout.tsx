@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import localFont from "next/font/local"
+import localFont from "next/font/local";
 
-const talios =localFont
-({
-    src: "./fonts/tallios-font/tallios.otf",
-    variable: "--font-tallios",
-    weight: "400",
-    style: "normal",
-})
+const talios = localFont({
+  src: "./fonts/tallios-font/tallios.otf",
+  variable: "--font-tallios",
+  weight: "400",
+  style: "normal",
+});
 
-const calama =localFont
-({
-    src: "./fonts/Calama/Calama_new.ttf",
-    variable: "--font-calama",
-    weight: "400",
-    style: "normal",
+const calama = localFont({
+  src: "./fonts/Calama/Calama_new.ttf",
+  variable: "--font-calama",
+  weight: "400",
+  style: "normal",
 });
 
 const geistSans = Geist({
@@ -41,9 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${calama.className} ${talios.variable} antialiased`}
-      >
+      <body className={`${calama.className} ${talios.variable} antialiased`}>
         {children}
       </body>
     </html>
