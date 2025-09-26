@@ -4,15 +4,30 @@ export default function Home() {
 
   <main className="relative h-screen flex">
 
-
       <div className="flex flex-col justify-center h-screen pl-[400px] gap-0">
-         <div className="flex gap-4 mb-8">
+
+         <div className="flex gap-20 mb-8">
             <a 
               href="https://github.com"
               target="_blank"
               className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
-              
-            ><img src="\icons\github-142-svgrepo-com.svg" alt="Github" className="w-12 h-12 hover:scale-110 transition-transform"></img></a>
+            ><img src="\icons\github-142-svgrepo-com.svg" alt="Github" className="w-12 h-12 hover:scale-110 transition-transform"/>
+            </a>
+
+            <a 
+              href="https://Linkedin.com"
+              target="_blank"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
+            ><img src="/icons/linkedin-linked-in-svgrepo-com.svg" alt="LinkedIn" className="w-12 h-12 hover:scale-110 transition-transform"/>
+            </a>
+
+            <a 
+              href="https://www.instagram.com/_martincam_/"
+              target="_blank"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
+            ><img src="\icons\instagram-svgrepo-com.svg" alt="LinkedIn" className="w-12 h-12 hover:scale-110 transition-transform"/>
+            </a>
+
           </div>
 
           <div id="titlePlate" className="-mb-20">Martin</div>
@@ -33,7 +48,7 @@ export default function Home() {
             zIndex: -1,
               }}
           ></div>
-            
+           
 
 
 
