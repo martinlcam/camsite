@@ -18,7 +18,6 @@ export default function Home() {
                alt="ASKDFKAJSDF"
                className="absolute  z-[-1]">
         </img>
-
         <div className="flex flex-col justify-center h-screen pl-[18vw] gap-0">
           <div className="flex gap-20 mb-8 items-center ">
             <a
@@ -78,11 +77,28 @@ export default function Home() {
           <div id="titlePlate">Cam</div>
         </div>
 
-        <div className="relative w-[max-content] font-mono
-  before:absolute before:inset-0 before:animate-typewriter before:bg-white
-  after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
-  Hello World </div>
-
+        <div className="flex flex-c 
+                        absolute 
+                        translate-y-70
+                        translate-x-215">
+          <div className="
+            text-[75px]
+            relative
+            w-[max-content]
+            h-[max-content]
+            before:absolute 
+            before:inset-0 
+            before:animate-typewriter 
+            before:bg-white 
+            after:absolute 
+            after:inset-0 
+            after:w-[0.125em] 
+            after:animate-caret 
+            after:bg-black
+            z-1 
+            ">
+            Hello World </div>
+        </div>
       </main>
     </div>
   );
