@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-typewriter: typewriter 2s steps(11) forwards;
+  --animate-caret: typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s;
+
+  @keyframes typewriter {
+    to { left: 100%; }
+  }
+  @keyframes blink {
+    0% { opacity: 0; }
+    0.1% { opacity: 1; }
+    50% { opacity: 1; }
+    50.1% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 
+
+
 const talios = localFont({
   src: "./fonts/tallios-font/tallios.otf",
   variable: "--font-tallios",

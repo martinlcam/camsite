@@ -57,17 +57,17 @@ export default function Home() {
               />
             </a>
               <a href="http://localhost:3000/about"
-               className="pl-20 text-[35px]">
+               className="pl-20 text-[35px] hover:text-[#7b847c] transition-colors duration-200">
             ./About
             </a>
 
               <a href="http://localhost:3000/about"
-               className="text-[35px]">
+               className="text-[35px] hover:text-[#7b847c] transition-colors duration-200">
             ./Projects
             </a>
 
               <a href="http://localhost:3000/about"
-               className="text-[35px]">
+               className="text-[35px] hover:text-[#7b847c] transition-colors duration-200">
             ./Contact
             </a>
 
@@ -76,8 +76,13 @@ export default function Home() {
           
           <div id="titlePlate" className="-mb-20">Martin</div>
           <div id="titlePlate">Cam</div>
-
         </div>
+
+        <div className="relative w-[max-content] font-mono
+  before:absolute before:inset-0 before:animate-typewriter before:bg-white
+  after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
+  Hello World </div>
+
       </main>
     </div>
   );
