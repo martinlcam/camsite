@@ -5,10 +5,15 @@ import Header from './components/header';
 export default function Home() {
   return (
     <main>
-
       <Header />
 
-      <div className="relative overflow-hidden min-h-screen max-h-screen w-full">
+      <div className="absolute inset-0 flex justify-center items-center z-10">
+        <span className="text-[80px] text-black animate-slideInUp mt-[-20vh]">
+          Martin Cam
+        </span>
+      </div>
+
+      <div className="relative overflow-hidden min-h-screen max-h-screen w-full z-[-1]">
         <Ballpit
           count={100}
           gravity={0.5}
@@ -16,8 +21,8 @@ export default function Home() {
           wallBounce={0.95}
           followCursor={false}
         />
-      </div>
 
+      </div>
     </main>
   );
 }

@@ -31,11 +31,11 @@ export default function Header() {
                             alt="Site icon"
                             width={28}
                             height={28}
-                            className="inline-block mr-2"
+                            className="items-center"
                         />
                     </Link>
 
-                    <span className="text-[30px] font-bold text-black">Martin Cam</span>
+                    <span className="text-[30px] text-black">Martin Cam</span>
                     <div className="hidden gap-6 md:flex ml-6">
                         {navigationItems.map((item) => (
                             <Link key={item.href} href={item.href} className="text-[17px] font-medium hover:underline">
