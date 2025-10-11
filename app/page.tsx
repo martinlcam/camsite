@@ -16,7 +16,7 @@ export default function Home() {
       <div className="relative overflow-hidden min-h-screen max-h-screen w-full z-[-1]">
         <Ballpit
           count={100}
-          gravity={0.3}
+          gravity={0.0}
           friction={1}
           wallBounce={0.95}
           followCursor={false}
