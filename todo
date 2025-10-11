@@ -23,3 +23,17 @@ make it cool bro make a feedback form
         #e79fff
         #02ff71ff
         #f55821
+
+         <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
+    <DotGrid
+      dotSize={4}
+      gap={22}
+      baseColor="#7e7e7eff"
+      activeColor="#E79FFF"
+      proximity={120}
+      shockRadius={250}
+      shockStrength={5}
+      resistance={750}
+      returnDuration={1.5}
+    />
+  </div>
