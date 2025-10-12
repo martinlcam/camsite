@@ -24,17 +24,23 @@ export default function Home() {
               Hey there, I&apos;m
             </div>
 
-            <div className="text-[80px] text-black animate-slideInUp text-center md:text-left leading-none">
-              Martin Cam
+            <div className="flex items-center text-[80px] text-black animate-slideInUp text-center md:text-left leading-none gap-2">
+              <span>Martin Cam</span>
+              <img
+                src="\landingpagevectors\namedot.svg"
+                alt="dot"
+                className="w-3 h-3 -mt-12"
+              />
             </div>
+
 
             <div className="text-black animate-slideInUp text-left leading-relaxed">
               An 18-year-old Full Stack web developer based in Vancouver, Canada.
               I&apos;m currently working as a Software Engineer at Futurity, an AI-powered learning and career enablement platform designed to prepare individuals and organizations for the future of work.
 
-            <div className="text-black animate-slideInUp text-left leading-relaxed">
-              Primarily, I write a lot of TypeScript, React, Next, and Tailwind CSS but I also have experience with ExpressJS, Drizzle ORM, PostgreSQL, and Docker.
-            </div>
+              <div className="text-black animate-slideInUp text-left mt-5 leading-relaxed">
+                Primarily, I write a lot of TypeScript, React, Next, and Tailwind CSS but I also have experience with ExpressJS, Drizzle ORM, PostgreSQL, and Docker.
+              </div>
 
             </div>
           </div>
