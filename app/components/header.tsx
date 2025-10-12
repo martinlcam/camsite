@@ -61,7 +61,7 @@ export default function Header() {
                     </a>
 
                     <a
-                        href="www.linkedin.com/in/martin-cam-542909295"
+                        href="https://www.linkedin.com/in/martin-cam-542909295"
                         target="_blank"
                         className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
                     >
