@@ -21,7 +21,7 @@ export default function Home() {
         <div className="absolute inset-0 flex flex-col justify-center items-center z-10 mt-[-20vh] px-4">
           <div className="max-w-xl w-full flex flex-col space-y-3 bg-white/30 px-8 py-3 shadow-2xl backdrop-blur-2xl rounded-xl">
             <div className="text-black animate-slideInUp text-left">
-              Hey there, I'm
+              Hey there, I&apos;m
             </div>
 
             <div className="text-[80px] text-black animate-slideInUp text-center md:text-left leading-none">
@@ -30,7 +30,7 @@ export default function Home() {
 
             <div className="text-black animate-slideInUp text-left leading-relaxed">
               An 18-year-old Full Stack web developer based in Vancouver, Canada.
-              I'm currently working as a Software Engineer at Futurity, an AI-powered learning and career enablement platform designed to prepare individuals and organizations for the future of work.
+              I&apos;m currently working as a Software Engineer at Futurity, an AI-powered learning and career enablement platform designed to prepare individuals and organizations for the future of work.
 
             <div className="text-black animate-slideInUp text-left leading-relaxed">
               Primarily, I write a lot of TypeScript, React, Next, and Tailwind CSS but I also have experience with ExpressJS, Drizzle ORM, PostgreSQL, and Docker.
