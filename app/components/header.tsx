@@ -6,22 +6,24 @@ import Link from "next/link";
 export const navigationItems = [
     {
         title: "./about",
-        href: "",
+        href: "about",
     },
     {
         title: "./projects",
-        href: "",
+        href: "projects",
     },
     {
         title: "./contact",
-        href: "",
+        href: "contact",
     }
 ];
 
 export default function Header() {
     return (
         <nav
-            className="fixed left-1/2 top-6 z-50 flex w-11/12 max-w-3xl -translate-x-1/2 flex-col items-center rounded-full border border-white/10 bg-white/70 px-8 py-3 shadow-lg backdrop-blur-lg"
+            className="fixed left-1/2 top-6 z-50 flex w-11/12 max-w-3xl -translate-x-1/2 flex-col items-center
+    rounded-full border border-white/20 bg-white/30 px-8 py-3
+    shadow-2xl backdrop-blur-2xl transition-all duration-500"
         >
             <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-3">

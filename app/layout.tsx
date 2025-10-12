@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -16,6 +16,18 @@ const calama = localFont({
   weight: "400",
   style: "normal",
 });
+
+const isonorm = localFont({
+  src: "./fonts/Isonorm 3098 Regular/Isonorm 3098 Regular.otf",
+  variable: "--font-isonorm",
+  weight: "400",
+  style: "normal",
+
+})
+
+/*const Roboto = Roboto({
+  variable: "--font-roboto"
+})*/
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${calama.className} ${talios.variable} antialiased`}>
+      <body className={`${geistSans.className} ${talios.variable} ${calama.variable}antialiased`}>
         {children}
       </body>
     </html>

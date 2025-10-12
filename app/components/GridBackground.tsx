@@ -22,13 +22,17 @@ export default function GridBackground() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const cols = Math.ceil(dimensions.width / squareSize);
-  const rows = Math.ceil(dimensions.height / squareSize);
+  const cols = Math.floor(dimensions.width / squareSize) + 1;
+  const rows = Math.floor(dimensions.height / squareSize) + 1;
 
   return (
     <div
-      className="absolute inset-0 w-full h-full z-[-1] pointer-events-none"
+      className="fixed top-0 left-0 w-screen h-screen z-[-2] pointer-events-none"
       style={{
+        position: 'fixed',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
         display: 'grid',
         gridTemplateRows: `repeat(${rows}, ${squareSize}px)`,
         gridTemplateColumns: `repeat(${cols}, ${squareSize}px)`,
