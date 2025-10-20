@@ -41,7 +41,7 @@ export default function Home() {
               <div className="text-black animate-slideInUp text-left mt-5 leading-relaxed">
                 Primarily, I write a lot of TypeScript, React, Next, and Tailwind CSS but I also have experience with ExpressJS, Drizzle ORM, PostgreSQL, and Docker.
               </div>
-
+ 
             </div>
           </div>
         </div>
