@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "radix-themes-tw";
 
 /* Add utility class globally */
 @layer utilities {
