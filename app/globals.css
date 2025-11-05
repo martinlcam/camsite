@@ -1,32 +1,5 @@
 @import "tailwindcss";
-
-@theme {
-  --animate-typewriter: typewriter 2s steps(11) forwards;
-  --animate-caret: typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s;
-
-  @keyframes typewriter {
-    to { left: 100%; }
-  }
-  @keyframes blink {
-    0% { opacity: 0; }
-    0.1% { opacity: 1; }
-    50% { opacity: 1; }
-    50.1% { opacity: 0; }
-    100% { opacity: 0; }
-  }
-
-  /* SlideInUp animation keyframes added here */
-  @keyframes slideInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
+@import "radix-themes-tw";
 
 /* Add utility class globally */
 @layer utilities {
