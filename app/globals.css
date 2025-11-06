@@ -1,12 +1,23 @@
+@import '@radix-ui/colors/purple.css';
+@import '@radix-ui/colors/purple-dark.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Add utility class globally */
-@layer utilities {
-  .animate-slideInUp {
-    animation: slideInUp 0.7s ease-out forwards;
-  }
+:root {
+  --palette-primary-1: var(--purple-1);
+  --palette-primary-2: var(--purple-2);
+  --palette-primary-3: var(--purple-3);
+  --palette-primary-4: var(--purple-4);
+  --palette-primary-5: var(--purple-5);
+  --palette-primary-6: var(--purple-6);
+  --palette-primary-7: var(--purple-7);
+  --palette-primary-8: var(--purple-8);
+  --palette-primary-9: var(--purple-9);
+  --palette-primary-10: var(--purple-10);
+  --palette-primary-11: var(--purple-11);
+  --palette-primary-12: var(--purple-12);
 }
 
 :root {
