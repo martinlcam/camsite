@@ -8,7 +8,7 @@ export const satoshi = localFont({
       style: 'normal',
     },
     {
-      path: '../public/fonts/Satoshi-Variableitalic.woff2', 
+      path: '../public/fonts/Satoshi-VariableItalic.woff2', 
       weight: '300 900',
       style: 'italic',
     },
