@@ -1,6 +1,6 @@
 import DotGrid from "./components/DotGrid";
 import Ballpit from "./components/BallPit";
-import Header from "./components/Header";
+import Header from "./components/header";
 import GridBackground from "./components/GridBackground";
 
 export default function Home() {

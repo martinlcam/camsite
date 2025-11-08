@@ -1,5 +1,5 @@
 import GridBackground from "../components/GridBackground";
-import Header from "../components/Header";
+import Header from "../components/header";
 import AuthComponent from "./AuthComponent";
 
 export default function Home() {
