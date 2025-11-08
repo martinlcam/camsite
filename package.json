@@ -9,7 +9,8 @@
     "lint": "eslint",
     "fmt": "prettier --write .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "pack": "bun run next build --webpack && bun run fmt && bun run lint && bun run dev"
   },
   "dependencies": {
     "@next/codemod": "^16.0.2-canary.7",

@@ -51,8 +51,6 @@ export default function Home() {
               CSS but I also have experience with ExpressJS, Drizzle ORM,
               PostgreSQL, and Docker.
             </div>
-          
-      
           </div>
         </div>
       </div>

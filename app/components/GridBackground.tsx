@@ -7,7 +7,7 @@ export default function GridBackground() {
           linear-gradient(#ccccccff 1px, transparent 1px),
           linear-gradient(90deg, #ccccccff 1px, transparent 1px)
         `,
-        backgroundSize: '50px 50px',
+        backgroundSize: "50px 50px",
       }}
     />
   );
