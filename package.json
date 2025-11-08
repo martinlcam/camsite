@@ -15,8 +15,12 @@
   "dependencies": {
     "@next/codemod": "^16.0.2-canary.7",
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-form": "^0.1.8",
     "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@radix-ui/react-password-toggle-field": "^0.1.3",
     "gsap": "^3.13.0",
     "latest": "^0.2.0",
     "next": "^16.0.1",

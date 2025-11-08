@@ -1,17 +1,15 @@
 import DotGrid from "./components/DotGrid";
 import Ballpit from "./components/BallPit";
-import Header from "./components/header";
+import Header from "./components/Header";
 import GridBackground from "./components/GridBackground";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      {/* Grid Background - Must be first and lowest z-index */}
       <div className="fixed inset-0 z-0">
         <GridBackground />
       </div>
 
-      {/* Ballpit Animation */}
       <div className="fixed inset-0 z-10">
         <Ballpit
           count={100}
