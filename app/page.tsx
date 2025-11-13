@@ -1,4 +1,4 @@
-import DotGrid from "./components/DotGrid";
+//import DotGrid from "./components/DotGrid";
 import Ballpit from "./components/BallPit";
 import Header from "./components/header";
 import GridBackground from "./components/GridBackground";
@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-20 min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-xl w-full flex flex-col space-y-3 bg-white/30 px-8 py-3 shadow-2xl backdrop-blur-2xl rounded-xl">
+        <div className="max-w-xl w-full flex flex-col space-y-3 bg-white/10 px-8 py-3 shadow-2xl backdrop-blur-2xl rounded-xl">
           <div className="text-black animate-slideInUp text-left">
             Hey there, I&apos;m
           </div>

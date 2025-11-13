@@ -13,7 +13,6 @@ const config: Config = {
         satoshi: ["var(--font-satoshi)", "sans-serif"],
       },
       colors: {
-        // Use CSS variables for dynamic theming
         palette: {
           primary: {
             1: "hsl(var(--palette-primary-1) / <alpha-value>)",
