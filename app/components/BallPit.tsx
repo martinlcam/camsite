@@ -573,6 +573,7 @@ function createPointerData(
     onLeave: () => {},
     ...options,
   };
+
   if (!pointerMap.has(options.domElement)) {
     pointerMap.set(options.domElement, defaultData);
     if (!globalPointerActive) {
@@ -674,7 +675,9 @@ function processPointerInteraction() {
 }
 
 function onTouchStart(e: TouchEvent) {
-  if (e.touches.length > 0) {
+  const isCanvasTouch = Array.from(pointerMap.keys()).includes(e.target as HTMLElement);
+
+  if (isCanvasTouch && e.touches.length > 0) {
     e.preventDefault();
     pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
     for (const [elem, data] of pointerMap) {
@@ -693,7 +696,9 @@ function onTouchStart(e: TouchEvent) {
 }
 
 function onTouchMove(e: TouchEvent) {
-  if (e.touches.length > 0) {
+  const isCanvasTouch = Array.from(pointerMap.keys()).some(elem => elem.contains(e.target as Node));
+
+  if (isCanvasTouch && e.touches.length > 0) {
     e.preventDefault();
     pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
     for (const [elem, data] of pointerMap) {

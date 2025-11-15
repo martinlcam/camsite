@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import {
@@ -16,27 +17,28 @@ import {
 export const navigationItems = [
   {
     title: "About",
-    href: "about",
+    href: "/about",
   },
   {
     title: "Projects",
-    href: "projects",
+    href: "/projects",
   },
   {
     title: "Contact",
-    href: "contact",
+    href: "/contact",
   },
   {
     title: "C-Net",
-    href: "cnet",
+    href: "/cnet",
     isSpecial: true,
   },
 ];
 
-// Divider component
-const Divider = () => <div className="h-4 w-px bg-gray-400/50 mx-2" />;
+//perhaps shift to radix theme if this gets annoying
+const Seperator = () => <div className="h-4 w-px bg-gray-400/50 mx-2" />;
 
 export default function Header() {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -77,6 +79,13 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
     <>
       <header className="fixed left-1/2 top-6 z-50 w-11/12 max-w-6xl -translate-x-1/2">
@@ -106,7 +115,7 @@ export default function Header() {
             <div className="hidden gap-6 md:flex items-center">
               {navigationItems.map((item, index) => (
                 <React.Fragment key={item.href}>
-                  {item.title === "C-Net" && <Divider />}
+                  {item.title === "C-Net" && <Seperator />}
                   <NavigationMenu.Item>
                     <NavigationMenu.Link asChild>
                       <Link
@@ -114,12 +123,18 @@ export default function Header() {
                         className={`group relative px-4 py-2 text-[17px] font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md ${
                           item.isSpecial
                             ? "text-purple-700 bg-purple-100/50 hover:bg-purple-200/50 hover:text-purple-800"
+                            : isActive(item.href)
+                            ? "text-purple-700"
                             : "text-gray-700 hover:text-purple-700"
                         }`}
                       >
                         {item.title}
                         {!item.isSpecial && (
-                          <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                          <span 
+                            className={`absolute bottom-0 left-0 h-0.5 bg-purple-600 transition-all duration-300 ${
+                              isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                            }`}
+                          />
                         )}
                       </Link>
                     </NavigationMenu.Link>
@@ -193,7 +208,7 @@ export default function Header() {
         </NavigationMenu.Root>
       </header>
 
-      {/* Mobile Menu Dropdown - Separate from header for better z-index control */}
+{/*      Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           ref={menuRef}
@@ -212,6 +227,8 @@ export default function Header() {
                   className={`px-4 py-3 text-[17px] font-medium rounded-md transition-colors duration-200 ${
                     item.isSpecial
                       ? "text-purple-700 bg-purple-100/50 hover:bg-purple-200/50 hover:text-purple-800 text-center"
+                      : isActive(item.href)
+                      ? "text-purple-700 bg-purple-50"
                       : "text-gray-700 hover:text-purple-700 hover:bg-purple-50"
                   }`}
                   onClick={closeMobileMenu}

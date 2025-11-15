@@ -2,6 +2,7 @@
 import Ballpit from "./components/BallPit";
 import Header from "./components/header";
 import GridBackground from "./components/GridBackground";
+import { Text } from "@radix-ui/themes";
 
 export default function Home() {
   return (
@@ -40,10 +41,12 @@ export default function Home() {
           </div>
 
           <div className="text-black animate-slideInUp text-left leading-relaxed">
-            An 18-year-old Full Stack web developer based in Vancouver, Canada.
-            I&apos;m currently working as a Software Engineer at Futurity, an
-            AI-powered learning and career enablement platform designed to
-            prepare individuals and organizations for the future of work.
+            An 18-year-old Full Stack web developer based in{" "}
+            <Text color="iris">Vancouver, Canada</Text>. I&apos;m currently
+            working as a{" "}
+            <Text color="grass">Software Engineer at Futurity</Text>, an
+            international AI startup providing enterprise on-premise AI
+            deployments, integrations and plugins for clients around the world.
             <div className="text-black animate-slideInUp text-left mt-5 leading-relaxed">
               Primarily, I write a lot of TypeScript, React, Next, and Tailwind
               CSS but I also have experience with ExpressJS, Drizzle ORM,
