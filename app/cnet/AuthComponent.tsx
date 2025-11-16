@@ -240,14 +240,15 @@ export default function AuthComponent() {
             Password Reset
           </Toast.Title>
           <Toast.Description className="m-0 text-[13px] leading-[1.3] text-gray-600 [grid-area:_description]">
-            If an account exists for this email, you'll receive password reset instructions.
+            If an account exists for this email, you'll receive password reset
+            instructions.
           </Toast.Description>
           <Toast.Action
             className="[grid-area:_action]"
             asChild
             altText="Close toast"
           >
-            <button 
+            <button
               className="inline-flex h-[25px] items-center justify-center rounded bg-purple-100 px-2.5 text-xs font-medium leading-[25px] text-purple-700 shadow-[inset_0_0_0_1px] shadow-purple-200 hover:shadow-[inset_0_0_0_1px] hover:shadow-purple-300 focus:shadow-[0_0_0_2px] focus:shadow-purple-400"
               onClick={() => setOpen(false)}
             >

@@ -3,7 +3,6 @@ import "./globals.css";
 import { satoshi } from "@/lib/fonts";
 import "@radix-ui/themes/styles.css";
 
-
 export default function RootLayout({
   children,
 }: {

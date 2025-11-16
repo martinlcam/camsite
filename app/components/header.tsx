@@ -124,15 +124,17 @@ export default function Header() {
                           item.isSpecial
                             ? "text-purple-700 bg-purple-100/50 hover:bg-purple-200/50 hover:text-purple-800"
                             : isActive(item.href)
-                            ? "text-purple-700"
-                            : "text-gray-700 hover:text-purple-700"
+                              ? "text-purple-700"
+                              : "text-gray-700 hover:text-purple-700"
                         }`}
                       >
                         {item.title}
                         {!item.isSpecial && (
-                          <span 
+                          <span
                             className={`absolute bottom-0 left-0 h-0.5 bg-purple-600 transition-all duration-300 ${
-                              isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+                              isActive(item.href)
+                                ? "w-full"
+                                : "w-0 group-hover:w-full"
                             }`}
                           />
                         )}
@@ -208,7 +210,7 @@ export default function Header() {
         </NavigationMenu.Root>
       </header>
 
-{/*      Mobile Menu */}
+      {/*      Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           ref={menuRef}
@@ -228,8 +230,8 @@ export default function Header() {
                     item.isSpecial
                       ? "text-purple-700 bg-purple-100/50 hover:bg-purple-200/50 hover:text-purple-800 text-center"
                       : isActive(item.href)
-                      ? "text-purple-700 bg-purple-50"
-                      : "text-gray-700 hover:text-purple-700 hover:bg-purple-50"
+                        ? "text-purple-700 bg-purple-50"
+                        : "text-gray-700 hover:text-purple-700 hover:bg-purple-50"
                   }`}
                   onClick={closeMobileMenu}
                 >

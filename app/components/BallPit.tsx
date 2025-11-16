@@ -675,7 +675,9 @@ function processPointerInteraction() {
 }
 
 function onTouchStart(e: TouchEvent) {
-  const isCanvasTouch = Array.from(pointerMap.keys()).includes(e.target as HTMLElement);
+  const isCanvasTouch = Array.from(pointerMap.keys()).includes(
+    e.target as HTMLElement,
+  );
 
   if (isCanvasTouch && e.touches.length > 0) {
     e.preventDefault();
@@ -696,7 +698,9 @@ function onTouchStart(e: TouchEvent) {
 }
 
 function onTouchMove(e: TouchEvent) {
-  const isCanvasTouch = Array.from(pointerMap.keys()).some(elem => elem.contains(e.target as Node));
+  const isCanvasTouch = Array.from(pointerMap.keys()).some((elem) =>
+    elem.contains(e.target as Node),
+  );
 
   if (isCanvasTouch && e.touches.length > 0) {
     e.preventDefault();

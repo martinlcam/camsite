@@ -30,7 +30,7 @@ const config: Config = {
           },
         },
       },
-  
+
       keyframes: {
         hide: {
           from: { opacity: "1" },

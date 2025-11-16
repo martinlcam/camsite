@@ -11,7 +11,7 @@ export default function Home() {
         <GridBackground />
       </div>
 
-      <div className="fixed inset-0 z-10">
+    <div className="fixed inset-0 z-10">
         <Ballpit
           count={100}
           gravity={0.1}
@@ -19,7 +19,7 @@ export default function Home() {
           wallBounce={0.95}
           followCursor={false}
         />
-      </div>
+      </div> 
 
       <div className="relative z-30">
         <Header />
