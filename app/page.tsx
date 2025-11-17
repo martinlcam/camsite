@@ -11,7 +11,7 @@ export default function Home() {
         <GridBackground />
       </div>
 
-    <div className="fixed inset-0 z-10">
+      <div className="fixed inset-0 z-10">
         <Ballpit
           count={100}
           gravity={0.1}
@@ -19,7 +19,7 @@ export default function Home() {
           wallBounce={0.95}
           followCursor={false}
         />
-      </div> 
+      </div>
 
       <div className="relative z-30">
         <Header />
@@ -44,8 +44,15 @@ export default function Home() {
             An 18-year-old Full Stack web developer based in{" "}
             <Text color="iris">Vancouver, Canada</Text>. I&apos;m currently
             working as a{" "}
-            <Text color="grass">Software Engineer at Futurity</Text>, an
-            international AI startup providing enterprise on-premise AI
+            <a
+              href="https://futurity.work"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <Text color="grass">Software Engineer at Futurity</Text>
+            </a>
+            , an international AI startup providing enterprise on-premise AI
             deployments, integrations and plugins for clients around the world.
             <div className="text-black animate-slideInUp text-left mt-5 leading-relaxed">
               Primarily, I write a lot of TypeScript, React, Next, and Tailwind

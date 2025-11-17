@@ -13,7 +13,7 @@ import {
   EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 
-// Google Icon
+// I need to fix this
 const GoogleIcon = () => (
   <svg className="h-5 w-5" viewBox="0 0 24 24">
     <path
@@ -237,11 +237,10 @@ export default function AuthComponent() {
           onOpenChange={setOpen}
         >
           <Toast.Title className="mb-[5px] text-[15px] font-medium text-gray-900 [grid-area:_title]">
-            Password Reset
+            LOL
           </Toast.Title>
           <Toast.Description className="m-0 text-[13px] leading-[1.3] text-gray-600 [grid-area:_description]">
-            If an account exists for this email, you'll receive password reset
-            instructions.
+            Sucks to suck
           </Toast.Description>
           <Toast.Action
             className="[grid-area:_action]"
@@ -257,7 +256,7 @@ export default function AuthComponent() {
           </Toast.Action>
         </Toast.Root>
 
-        {/* Toast Viewport - where toasts appear */}
+        {/* Toast Viewport */}
         <Toast.Viewport className="fixed bottom-0 right-0 z-[2147483647] m-0 flex w-[390px] max-w-[100vw] list-none flex-col gap-2.5 p-[var(--viewport-padding)] outline-none [--viewport-padding:_25px]" />
       </Toast.Provider>
     </>
