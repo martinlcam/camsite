@@ -21,7 +21,7 @@ interface FormErrors {
 interface ApiResponse {
   success: boolean;
   message: string;
-  data?: any;
+  data?: string;
   error?: string;
 }
 
@@ -34,40 +34,41 @@ export default function Contact() {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [characterCounts, setCharacterCounts] = useState({
     name: 0,
-    message: 0
+    message: 0,
   });
 
   // Debounced input handler hrrrdrrrr
-  const debouncedSetFormData = useCallback(
-    (updates: Partial<FormData>) => {
-      setFormData(prev => ({ ...prev, ...updates }));
+  const debouncedSetFormData = useCallback((updates: Partial<FormData>) => {
+    setFormData((prev) => ({ ...prev, ...updates }));
+  }, []);
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+
+      // Update character counts
+      if (name === "name" || name === "message") {
+        setCharacterCounts((prev) => ({ ...prev, [name]: value.length }));
+      }
+
+      // Clear error when user starts typing
+      if (errors[name as keyof FormErrors]) {
+        setErrors((prev) => ({ ...prev, [name]: undefined }));
+      }
+
+      debouncedSetFormData({ [name]: value });
     },
-    []
+    [debouncedSetFormData, errors],
   );
-
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    
-    // Update character counts
-    if (name === 'name' || name === 'message') {
-      setCharacterCounts(prev => ({ ...prev, [name]: value.length }));
-    }
-
-    // Clear error when user starts typing
-    if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
-    }
-
-    debouncedSetFormData({ [name]: value });
-  }, [debouncedSetFormData, errors]);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
-
 
     if (!formData.name.trim()) {
       newErrors.name = "Please enter your name";
@@ -77,7 +78,6 @@ export default function Contact() {
       newErrors.name = "Name must be less than 100 characters";
     }
 
-
     if (!formData.email.trim()) {
       newErrors.email = "Please enter your email";
     } else {
@@ -86,7 +86,6 @@ export default function Contact() {
         newErrors.email = "Please enter a valid email address";
       }
     }
-
 
     if (!formData.message.trim()) {
       newErrors.message = "Please enter a message";
@@ -122,7 +121,7 @@ export default function Contact() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-        signal: controller.signal
+        signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
@@ -135,19 +134,21 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
         setCharacterCounts({ name: 0, message: 0 });
         setErrors({});
-        
+
         // Auto-dismiss success message after 8 seconds
         setTimeout(() => setSubmitStatus("idle"), 8000);
       } else {
         setSubmitStatus("error");
-        setStatusMessage(result.error || "Failed to send message. Please try again.");
+        setStatusMessage(
+          result.error || "Failed to send message. Please try again.",
+        );
       }
     } catch (error) {
       setSubmitStatus("error");
       setStatusMessage(
-        error instanceof Error && error.name === 'AbortError'
+        error instanceof Error && error.name === "AbortError"
           ? "Request timed out. Please check your connection and try again."
-          : "An error occurred. Please try again later."
+          : "An error occurred. Please try again later.",
       );
       console.error("Error:", error);
     } finally {
@@ -155,16 +156,15 @@ export default function Contact() {
     }
   };
 
- 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && submitStatus !== 'idle') {
+      if (e.key === "Escape" && submitStatus !== "idle") {
         setSubmitStatus("idle");
       }
     };
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [submitStatus]);
 
   return (
@@ -173,29 +173,43 @@ export default function Contact() {
       <GridBackground />
       <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-20">
         <div className="flex flex-col gap-[32px] row-start-2 w-full max-w-2xl bg-white/30 px-8 py-8 shadow-2xl backdrop-blur-2xl rounded-xl border border-white/20">
-          
-       
           <div className="flex flex-col gap-4">
             <h1 className="text-2xl font-bold text-gray-900">Get in Touch</h1>
             <p className="text-black text-lg leading-relaxed">
-              I'm looking forward to hearing from you! If you prefer not to fill out forms, feel free to email me directly.
+              I&apos;m looking forward to hearing from you! If you prefer not to
+              fill out forms, feel free to email me directly.
             </p>
-            <a 
-              href="mailto:martin@futurity.work" 
+            <a
+              href="mailto:martin@futurity.work"
               className="inline-flex items-center gap-2 text-gray-700 hover:text-purple-700 transition-colors w-fit group"
               aria-label="Send email to martin@futurity.work"
             >
-              <span className="underline decoration-purple-600 group-hover:decoration-purple-800">martin@futurity.work</span>
-              <span className="text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↗</span>
+              <span className="underline decoration-purple-600 group-hover:decoration-purple-800">
+                martin@futurity.work
+              </span>
+              <span
+                className="text-lg group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
             </a>
           </div>
 
           <div className="h-px w-full bg-black/30 mx-2" />
 
           {/* Contact Form */}
-          <Form.Root onSubmit={handleSubmit} className="w-full flex flex-col gap-6" noValidate>
+          <Form.Root
+            onSubmit={handleSubmit}
+            className="w-full flex flex-col gap-6"
+            noValidate
+          >
             {/* Name Field */}
-            <Form.Field name="name" className="w-full" aria-invalid={!!errors.name}>
+            <Form.Field
+              name="name"
+              className="w-full"
+              aria-invalid={!!errors.name}
+            >
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
                   Name *
@@ -225,14 +239,20 @@ export default function Contact() {
                 />
               </Form.Control>
               {errors.name && (
-                <div id="name-error" className="text-xs font-medium text-red-600 mt-1">
+                <div
+                  id="name-error"
+                  className="text-xs font-medium text-red-600 mt-1"
+                >
                   {errors.name}
                 </div>
               )}
             </Form.Field>
 
-    
-            <Form.Field name="email" className="w-full" aria-invalid={!!errors.email}>
+            <Form.Field
+              name="email"
+              className="w-full"
+              aria-invalid={!!errors.email}
+            >
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
                   Email *
@@ -256,14 +276,20 @@ export default function Contact() {
                 />
               </Form.Control>
               {errors.email && (
-                <div id="email-error" className="text-xs font-medium text-red-600 mt-1">
+                <div
+                  id="email-error"
+                  className="text-xs font-medium text-red-600 mt-1"
+                >
                   {errors.email}
                 </div>
               )}
             </Form.Field>
 
-          
-            <Form.Field name="message" className="w-full" aria-invalid={!!errors.message}>
+            <Form.Field
+              name="message"
+              className="w-full"
+              aria-invalid={!!errors.message}
+            >
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
                   Share More Details *
@@ -289,11 +315,16 @@ export default function Contact() {
                   rows={6}
                   maxLength={5000}
                   className="w-full px-4 py-3 rounded-lg bg-white/60 border border-black/30 hover:border-purple-300 focus:border-purple-600 focus:outline-none backdrop-blur transition-all text-gray-900 placeholder-gray-500 focus:bg-white/80 resize-none data-[invalid]:border-red-600"
-                  aria-describedby={errors.message ? "message-error" : undefined}
+                  aria-describedby={
+                    errors.message ? "message-error" : undefined
+                  }
                 />
               </Form.Control>
               {errors.message && (
-                <div id="message-error" className="text-xs font-medium text-red-600 mt-1">
+                <div
+                  id="message-error"
+                  className="text-xs font-medium text-red-600 mt-1"
+                >
                   {errors.message}
                 </div>
               )}
@@ -301,14 +332,14 @@ export default function Contact() {
 
             {/* Status Messages */}
             {submitStatus === "success" && (
-              <div 
+              <div
                 className="px-4 py-3 rounded-lg bg-green-50 border-2 border-green-300 text-green-800 text-sm font-medium flex items-center gap-2"
                 role="alert"
                 aria-live="polite"
               >
                 <span className="text-green-600">✓</span>
                 <span>{statusMessage}</span>
-                <button 
+                <button
                   onClick={() => setSubmitStatus("idle")}
                   className="ml-auto text-green-600 hover:text-green-800"
                   aria-label="Dismiss message"
@@ -317,16 +348,16 @@ export default function Contact() {
                 </button>
               </div>
             )}
-            
+
             {submitStatus === "error" && (
-              <div 
+              <div
                 className="px-4 py-3 rounded-lg bg-red-50 border-2 border-red-300 text-red-800 text-sm font-medium flex items-center gap-2"
                 role="alert"
                 aria-live="polite"
               >
                 <span className="text-red-600">✕</span>
                 <span>{statusMessage}</span>
-                <button 
+                <button
                   onClick={() => setSubmitStatus("idle")}
                   className="ml-auto text-red-600 hover:text-red-800"
                   aria-label="Dismiss message"
@@ -336,7 +367,6 @@ export default function Contact() {
               </div>
             )}
 
-            
             <Form.Submit asChild>
               <Button
                 type="submit"
