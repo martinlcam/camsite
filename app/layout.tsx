@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { satoshi } from "@/lib/fonts";
 import "@radix-ui/themes/styles.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
