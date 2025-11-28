@@ -43,7 +43,7 @@ export default function Contact() {
     message: 0,
   });
 
-  // Debounced input handler hrrrdrrrr
+  //Debounced input handler hrrrdrrrr
   const debouncedSetFormData = useCallback((updates: Partial<FormData>) => {
     setFormData((prev) => ({ ...prev, ...updates }));
   }, []);
@@ -52,12 +52,12 @@ export default function Contact() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
 
-      // Update character counts
+
       if (name === "name" || name === "message") {
         setCharacterCounts((prev) => ({ ...prev, [name]: value.length }));
       }
 
-      // Clear error when user starts typing
+      //Clear error when user starts typing
       if (errors[name as keyof FormErrors]) {
         setErrors((prev) => ({ ...prev, [name]: undefined }));
       }
@@ -135,7 +135,7 @@ export default function Contact() {
         setCharacterCounts({ name: 0, message: 0 });
         setErrors({});
 
-        // Auto-dismiss success message after 8 seconds
+        //Auto-dismiss success message after 8 seconds
         setTimeout(() => setSubmitStatus("idle"), 8000);
       } else {
         setSubmitStatus("error");
@@ -238,14 +238,6 @@ export default function Contact() {
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
               </Form.Control>
-              {errors.name && (
-                <div
-                  id="name-error"
-                  className="text-xs font-medium text-red-600 mt-1"
-                >
-                  {errors.name}
-                </div>
-              )}
             </Form.Field>
 
             <Form.Field
@@ -275,14 +267,6 @@ export default function Contact() {
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
               </Form.Control>
-              {errors.email && (
-                <div
-                  id="email-error"
-                  className="text-xs font-medium text-red-600 mt-1"
-                >
-                  {errors.email}
-                </div>
-              )}
             </Form.Field>
 
             <Form.Field
@@ -312,7 +296,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Describe what you need..."
-                  rows={6}
+                  rows={3}
                   maxLength={5000}
                   className="w-full px-4 py-3 rounded-lg bg-white/60 border border-black/30 hover:border-purple-300 focus:border-purple-600 focus:outline-none backdrop-blur transition-all text-gray-900 placeholder-gray-500 focus:bg-white/80 resize-none data-[invalid]:border-red-600"
                   aria-describedby={
