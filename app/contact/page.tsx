@@ -304,14 +304,6 @@ export default function Contact() {
                   }
                 />
               </Form.Control>
-              {errors.message && (
-                <div
-                  id="message-error"
-                  className="text-xs font-medium text-red-600 mt-1"
-                >
-                  {errors.message}
-                </div>
-              )}
             </Form.Field>
 
             {/* Status Messages */}
