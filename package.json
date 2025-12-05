@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "pack": "bun run next build --webpack && bun run fmt && bun run lint && bun run dev",
-    "graph" : "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
+    "graph": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
   },
   "dependencies": {
     "@next/codemod": "^16.0.2-canary.7",

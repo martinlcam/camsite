@@ -1,30 +1,30 @@
-import { type NextRequest, NextResponse } from "next/server"
-import { Resend } from "resend"
-import { ContactEmailTemplate } from "../../components/ContactEmailTemplate"
+import { type NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+import { ContactEmailTemplate } from "../../components/ContactEmailTemplate";
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
-  console.log("route called")
+  console.log("route called");
 
   try {
-    const body = await request.json()
-    const { name, email, message } = body
+    const body = await request.json();
+    const { name, email, message } = body;
 
-    console.log("received:", { name, email, messageLength: message?.length })
+    console.log("received:", { name, email, messageLength: message?.length });
 
     if (!name || !email || !message) {
-      console.log("[v0] Validation failed - missing fields")
+      console.log("[v0] Validation failed - missing fields");
       return NextResponse.json(
         {
           success: false,
           error: "Missing required fields",
         },
         { status: 400 },
-      )
+      );
     }
 
-    console.log("sending email via Resend...")
+    console.log("sending email via Resend...");
 
     const { data, error } = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
@@ -32,20 +32,20 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       react: ContactEmailTemplate({ name, email, message }),
-    })
+    });
 
     if (error) {
-      console.error("Resend error:", error)
+      console.error("Resend error:", error);
       return NextResponse.json(
         {
           success: false,
           error: "Failed to send email",
         },
         { status: 500 },
-      )
+      );
     }
 
-    console.log("Email sent successfully, ID:", data?.id)
+    console.log("Email sent successfully, ID:", data?.id);
 
     return NextResponse.json(
       {
@@ -54,15 +54,15 @@ export async function POST(request: NextRequest) {
         data: data?.id,
       },
       { status: 200 },
-    )
+    );
   } catch (error) {
-    console.error("API error:", error)
+    console.error("API error:", error);
     return NextResponse.json(
       {
         success: false,
         error: error instanceof Error ? error.message : "Internal server error",
       },
       { status: 500 },
-    )
+    );
   }
 }

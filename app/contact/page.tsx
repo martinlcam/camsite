@@ -52,7 +52,6 @@ export default function Contact() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
 
-
       if (name === "name" || name === "message") {
         setCharacterCounts((prev) => ({ ...prev, [name]: value.length }));
       }
