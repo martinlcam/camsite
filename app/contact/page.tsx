@@ -331,7 +331,6 @@ export default function Contact() {
                 role="alert"
                 aria-live="polite"
               >
-                <span className="text-red-600">✕</span>
                 <span>{statusMessage}</span>
                 <button
                   onClick={() => setSubmitStatus("idle")}
