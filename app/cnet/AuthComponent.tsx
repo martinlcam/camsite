@@ -62,7 +62,7 @@ export default function AuthComponent() {
           <div className="fixed inset-0 z-0"></div>
 
           <div className="relative z-20 w-full max-w-md">
-            <div className="bg-white/30 backdrop-blur-2xl rounded-xl border border-white/20 shadow-2xl overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-2xl rounded-xl border border-white/20 shadow-2xl overflow-hidden">
               <div className="px-8 pt-8">
                 <div className="text-center">
                   <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -73,7 +73,6 @@ export default function AuthComponent() {
 
               <div className="px-8 pb-6">
                 <Form.Root onSubmit={handleSubmit} className="space-y-6">
-                  {/* Email Field */}
                   <Form.Field name="email" className="space-y-2">
                     <div className="flex items-center justify-between">
                       <Label.Root
@@ -107,7 +106,6 @@ export default function AuthComponent() {
                     </Form.Control>
                   </Form.Field>
 
-                  {/* Password Field */}
                   <Form.Field name="password" className="space-y-2">
                     <div className="flex items-center justify-between">
                       <Label.Root
@@ -152,7 +150,6 @@ export default function AuthComponent() {
                     </Form.Control>
                   </Form.Field>
 
-                  {/* Remember Me and Forgot Password */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <Checkbox.Root
@@ -230,7 +227,6 @@ export default function AuthComponent() {
           </div>
         </div>
 
-        {/* Toast Notification */}
         <Toast.Root
           className="grid grid-cols-[auto_max-content] items-center gap-x-[15px] rounded-md bg-white p-[15px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[state=closed]:animate-hide data-[state=open]:animate-slideIn data-[swipe=end]:animate-swipeOut data-[swipe=cancel]:transition-[transform_200ms_ease-out]"
           open={open}
@@ -256,7 +252,6 @@ export default function AuthComponent() {
           </Toast.Action>
         </Toast.Root>
 
-        {/* Toast Viewport */}
         <Toast.Viewport className="fixed bottom-0 right-0 z-[2147483647] m-0 flex w-[390px] max-w-[100vw] list-none flex-col gap-2.5 p-[var(--viewport-padding)] outline-none [--viewport-padding:_25px]" />
       </Toast.Provider>
     </>

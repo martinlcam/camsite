@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ChevronDown } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { useEffect, useState } from "react";
 
 const ScrollIndicator = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -15,8 +15,8 @@ const ScrollIndicator = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!isVisible) return null;
@@ -33,7 +33,7 @@ const ScrollIndicator = () => {
           <span className="text-[10px] tracking-widest text-white/80 uppercase font-light">
             Down
           </span>
-          <ChevronDown className="w-4 h-4 mt-1 text-white/80 animate-bounce" />
+          <ChevronDownIcon className="w-4 h-4 mt-1 text-white/80 animate-bounce" />
         </div>
       </div>
     </div>

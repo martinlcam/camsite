@@ -134,7 +134,6 @@ export default function Contact() {
         setCharacterCounts({ name: 0, message: 0 });
         setErrors({});
 
-        //Auto-dismiss success message after 8 seconds
         setTimeout(() => setSubmitStatus("idle"), 8000);
       } else {
         setSubmitStatus("error");
@@ -167,23 +166,29 @@ export default function Contact() {
   }, [submitStatus]);
 
   return (
-    <main>
-      <Header />
-      <GridBackground />
-      <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-20">
-        <div className="flex flex-col gap-[32px] row-start-2 w-full max-w-2xl bg-white/30 px-8 py-8 shadow-2xl backdrop-blur-2xl rounded-xl border border-white/20">
+    <main className="relative min-h-screen">
+      <div className="fixed inset-0 z-0">
+        <GridBackground />
+      </div>
+      <div className="relative z-30">
+        <Header />
+      </div>
+      <div className="relative z-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-20 animate-pageFadeIn">
+        <div className="flex flex-col gap-[32px] row-start-2 w-full max-w-2xl bg-palette-white px-8 py-8 shadow-2xl rounded-xl border border-palette-gray-20">
           <div className="flex flex-col gap-4">
-            <h1 className="text-2xl font-bold text-gray-900">Get in Touch</h1>
-            <p className="text-black text-lg leading-relaxed">
+            <h1 className="text-2xl font-bold text-palette-gray-100">
+              Get in Touch
+            </h1>
+            <p className="text-palette-gray-100 text-lg leading-relaxed">
               I&apos;m looking forward to hearing from you! If you prefer not to
               fill out forms, feel free to email me directly.
             </p>
             <a
               href="mailto:martin@futurity.work"
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-purple-700 transition-colors w-fit group"
+              className="inline-flex items-center gap-2 text-palette-gray-70 hover:text-palette-purple-60 transition-colors w-fit group"
               aria-label="Send email to martin@futurity.work"
             >
-              <span className="underline decoration-purple-600 group-hover:decoration-purple-800">
+              <span className="underline decoration-palette-purple-60 group-hover:decoration-palette-purple-70">
                 martin@futurity.work
               </span>
               <span
@@ -195,7 +200,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="h-px w-full bg-black/30 mx-2" />
+          <div className="h-px w-full bg-palette-gray-30 mx-2" />
 
           {/* Contact Form */}
           <Form.Root
@@ -203,18 +208,17 @@ export default function Contact() {
             className="w-full flex flex-col gap-6"
             noValidate
           >
-            {/* Name Field */}
             <Form.Field
               name="name"
               className="w-full"
               aria-invalid={!!errors.name}
             >
               <div className="flex items-baseline justify-between">
-                <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
+                <Form.Label className="text-sm font-semibold text-palette-gray-100 leading-none pb-3">
                   Name *
                 </Form.Label>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-palette-gray-50">
                     {characterCounts.name}/100
                   </span>
                   {errors.name && (
@@ -233,7 +237,7 @@ export default function Contact() {
                   required
                   placeholder="ex. Toby Fox"
                   maxLength={100}
-                  className="w-full px-4 py-3 rounded-lg bg-white/60 border border-black/30 hover:border-purple-300 focus:border-purple-600 focus:outline-none backdrop-blur transition-all text-gray-900 placeholder-gray-500 focus:bg-white/80 data-[invalid]:border-red-600"
+                  className="w-full px-4 py-3 rounded-lg bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
               </Form.Control>
@@ -245,7 +249,7 @@ export default function Contact() {
               aria-invalid={!!errors.email}
             >
               <div className="flex items-baseline justify-between">
-                <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
+                <Form.Label className="text-sm font-semibold text-palette-gray-100 leading-none pb-3">
                   Email *
                 </Form.Label>
                 {errors.email && (
@@ -262,7 +266,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="waddle-doo@website.com"
-                  className="w-full px-4 py-3 rounded-lg bg-white/60 border border-black/30 hover:border-purple-300 focus:border-purple-600 focus:outline-none backdrop-blur transition-all text-gray-900 placeholder-gray-500 focus:bg-white/80 data-[invalid]:border-red-600"
+                  className="w-full px-4 py-3 rounded-lg bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
               </Form.Control>
@@ -274,11 +278,11 @@ export default function Contact() {
               aria-invalid={!!errors.message}
             >
               <div className="flex items-baseline justify-between">
-                <Form.Label className="text-sm font-semibold text-gray-900 leading-none pb-3">
+                <Form.Label className="text-sm font-semibold text-palette-gray-100 leading-none pb-3">
                   Share More Details *
                 </Form.Label>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-palette-gray-50">
                     {characterCounts.message}/5000
                   </span>
                   {errors.message && (
@@ -297,7 +301,7 @@ export default function Contact() {
                   placeholder="Describe what you need..."
                   rows={3}
                   maxLength={5000}
-                  className="w-full px-4 py-3 rounded-lg bg-white/60 border border-black/30 hover:border-purple-300 focus:border-purple-600 focus:outline-none backdrop-blur transition-all text-gray-900 placeholder-gray-500 focus:bg-white/80 resize-none data-[invalid]:border-red-600"
+                  className="w-full px-4 py-3 rounded-lg bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white resize-none data-[invalid]:border-red-600"
                   aria-describedby={
                     errors.message ? "message-error" : undefined
                   }
@@ -305,7 +309,6 @@ export default function Contact() {
               </Form.Control>
             </Form.Field>
 
-            {/* Status Messages */}
             {submitStatus === "success" && (
               <div
                 className="px-4 py-3 rounded-lg bg-green-50 border-2 border-green-300 text-green-800 text-sm font-medium flex items-center gap-2"
@@ -345,7 +348,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer mt-2"
+                className="w-full py-3 bg-palette-purple-60 hover:bg-palette-purple-70 text-palette-white font-semibold rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer mt-2"
                 aria-busy={isLoading}
               >
                 {isLoading ? (
