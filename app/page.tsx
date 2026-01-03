@@ -1,7 +1,7 @@
-//import DotGrid from "./components/DotGrid";
-import Ballpit from "./components/BallPit";
-import Header from "./components/header";
-import GridBackground from "./components/GridBackground";
+//import DotGrid from "./components/DotGrid/DotGrid";
+import Ballpit from "./components/BallPit/BallPit";
+import Header from "./components/Header/header";
+import GridBackground from "./components/GridBackground/GridBackground";
 import { Text } from "@radix-ui/themes";
 
 export default function Home() {

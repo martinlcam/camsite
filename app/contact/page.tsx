@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@radix-ui/themes";
-import GridBackground from "../components/GridBackground";
-import Header from "../components/header";
+import GridBackground from "../components/GridBackground/GridBackground";
+import Header from "../components/Header/header";
 import { useState, useCallback, useEffect } from "react";
 import * as Form from "@radix-ui/react-form";
 
@@ -166,15 +166,15 @@ export default function Contact() {
   }, [submitStatus]);
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative h-screen overflow-hidden">
       <div className="fixed inset-0 z-0">
         <GridBackground />
       </div>
       <div className="relative z-30">
         <Header />
       </div>
-      <div className="relative z-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-20 animate-pageFadeIn">
-        <div className="flex flex-col gap-[32px] row-start-2 w-full max-w-2xl bg-palette-white px-8 py-8 shadow-2xl rounded-xl border border-palette-gray-20">
+      <div className="relative z-20 flex items-center justify-center h-full pt-24 pb-8 px-8 sm:px-20 animate-pageFadeIn overflow-y-auto">
+        <div className="flex flex-col gap-[32px] w-full max-w-2xl bg-palette-white px-8 py-8 shadow-2xl rounded-xl border border-palette-gray-20 my-auto">
           <div className="flex flex-col gap-4">
             <h1 className="text-2xl font-bold text-palette-gray-100">
               Get in Touch

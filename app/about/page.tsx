@@ -1,7 +1,7 @@
 "use client";
 
-import GridBackground from "../components/GridBackground";
-import Header from "../components/header";
+import GridBackground from "../components/GridBackground/GridBackground";
+import Header from "../components/Header/header";
 
 export default function About() {
   return (
