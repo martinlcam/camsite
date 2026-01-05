@@ -174,7 +174,7 @@ export default function Contact() {
         <Header />
       </div>
       <div className="relative z-20 flex items-center justify-center h-full pt-24 pb-8 px-8 sm:px-20 animate-pageFadeIn overflow-y-auto">
-        <div className="flex flex-col gap-[32px] w-full max-w-2xl bg-palette-white px-8 py-8 shadow-2xl rounded-xl border border-palette-gray-20 my-auto">
+        <div className="flex flex-col gap-[32px] w-full max-w-2xl bg-palette-white px-8 py-8 shadow-2xl rounded-[12px] border border-palette-gray-20 my-auto">
           <div className="flex flex-col gap-4">
             <h1 className="text-2xl font-bold text-palette-gray-100">
               Get in Touch
@@ -237,7 +237,7 @@ export default function Contact() {
                   required
                   placeholder="ex. Toby Fox"
                   maxLength={100}
-                  className="w-full px-4 py-3 rounded-lg bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
+                  className="w-full px-4 py-3 rounded-[12px] bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
                   aria-describedby={errors.name ? "name-error" : undefined}
                 />
               </Form.Control>
@@ -266,7 +266,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="waddle-doo@website.com"
-                  className="w-full px-4 py-3 rounded-lg bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
+                  className="w-full px-4 py-3 rounded-[12px] bg-palette-gray-10 border border-palette-gray-30 hover:border-palette-purple-40 focus:border-palette-purple-60 focus:outline-none transition-all text-palette-gray-100 placeholder-palette-gray-50 focus:bg-palette-white data-[invalid]:border-red-600"
                   aria-describedby={errors.email ? "email-error" : undefined}
                 />
               </Form.Control>
@@ -311,7 +311,7 @@ export default function Contact() {
 
             {submitStatus === "success" && (
               <div
-                className="px-4 py-3 rounded-lg bg-green-50 border-2 border-green-300 text-green-800 text-sm font-medium flex items-center gap-2"
+                className="px-4 py-3 rounded-[12px] bg-green-50 border-2 border-green-300 text-green-800 text-sm font-medium flex items-center gap-2"
                 role="alert"
                 aria-live="polite"
               >
@@ -329,7 +329,7 @@ export default function Contact() {
 
             {submitStatus === "error" && (
               <div
-                className="px-4 py-3 rounded-lg bg-red-50 border-2 border-red-300 text-red-800 text-sm font-medium flex items-center gap-2"
+                className="px-4 py-3 rounded-[12px] bg-red-50 border-2 border-red-300 text-red-800 text-sm font-medium flex items-center gap-2"
                 role="alert"
                 aria-live="polite"
               >
@@ -348,7 +348,7 @@ export default function Contact() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-palette-purple-60 hover:bg-palette-purple-70 text-palette-white font-semibold rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer mt-2"
+                className="w-full py-3 bg-palette-purple-60 hover:bg-palette-purple-70 text-palette-white font-semibold rounded-[12px] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer mt-2"
                 aria-busy={isLoading}
               >
                 {isLoading ? (

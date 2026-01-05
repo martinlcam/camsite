@@ -3,6 +3,7 @@ import "./globals.css";
 import { satoshi } from "@/lib/fonts";
 import "@radix-ui/themes/styles.css";
 import { Analytics } from "@vercel/analytics/next";
+import DebugMenu from "./components/DebugMenu/DebugMenu";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${satoshi.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <DebugMenu />
+      </body>
     </html>
   );
 }

@@ -30,7 +30,7 @@ export default function Projects() {
             {[1, 2, 3, 4, 5, 6].map((project, index) => (
               <div
                 key={index}
-                className="group relative bg-palette-white rounded-2xl overflow-hidden shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative bg-palette-white rounded-[12px] overflow-hidden shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300 cursor-pointer"
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
@@ -85,9 +85,9 @@ export default function Projects() {
             <h2 className="text-3xl font-bold text-palette-gray-100 mb-8 text-center">
               Featured Project
             </h2>
-            <div className="bg-palette-purple-15 rounded-3xl p-8 md:p-12 shadow-2xl border border-palette-purple-20 overflow-hidden relative">
+            <div className="bg-palette-purple-15 rounded-[12px] p-8 md:p-12 shadow-2xl border border-palette-purple-20 overflow-hidden relative">
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div className="relative h-64 md:h-96 bg-palette-white rounded-2xl flex items-center justify-center border-2 border-palette-gray-20">
+                <div className="relative h-64 md:h-96 bg-palette-white rounded-[12px] flex items-center justify-center border-2 border-palette-gray-20">
                   <span className="text-palette-gray-50">placeholder</span>
                 </div>
 
@@ -109,7 +109,7 @@ export default function Projects() {
                       (tech) => (
                         <span
                           key={tech}
-                          className="px-4 py-2 bg-palette-white text-palette-gray-70 rounded-lg text-sm font-medium"
+                          className="px-4 py-2 bg-palette-white text-palette-gray-70 rounded-[12px] text-sm font-medium"
                         >
                           {tech}
                         </span>
@@ -118,10 +118,10 @@ export default function Projects() {
                   </div>
 
                   <div className="flex gap-4">
-                    <button className="px-6 py-3 bg-palette-purple-60 text-palette-white rounded-lg font-semibold hover:bg-palette-purple-70 transition-colors">
+                    <button className="px-6 py-3 bg-palette-purple-60 text-palette-white rounded-[12px] font-semibold hover:bg-palette-purple-70 transition-colors">
                       View Project
                     </button>
-                    <button className="px-6 py-3 bg-palette-white text-palette-gray-70 rounded-lg font-semibold hover:bg-palette-gray-10 transition-colors">
+                    <button className="px-6 py-3 bg-palette-white text-palette-gray-70 rounded-[12px] font-semibold hover:bg-palette-gray-10 transition-colors">
                       View Code
                     </button>
                   </div>

@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-20 min-h-screen flex items-center justify-center px-4 animate-pageFadeIn">
-        <div className="max-w-xl w-full flex flex-col space-y-3 bg-palette-white px-8 py-6 shadow-2xl rounded-xl border border-palette-gray-20">
+        <div className="max-w-xl w-full flex flex-col space-y-3 bg-palette-white px-8 py-6 shadow-2xl rounded-[12px] border border-palette-gray-20">
           <div className="text-palette-gray-100 animate-slideInUp text-left">
             Hey there, I&apos;m
           </div>

@@ -18,7 +18,7 @@ export const Default: Story = {
     <div className="relative h-screen w-full bg-white">
       <GridBackground />
       <div className="relative z-10 flex items-center justify-center h-full">
-        <div className="bg-palette-white p-8 rounded-lg shadow-lg">
+        <div className="bg-palette-white p-8 rounded-[12px] shadow-lg">
           <h2 className="text-2xl font-bold text-palette-gray-100">
             Grid Background Example
           </h2>

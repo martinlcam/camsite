@@ -62,7 +62,7 @@ export default function AuthComponent() {
           <div className="fixed inset-0 z-0"></div>
 
           <div className="relative z-20 w-full max-w-md">
-            <div className="bg-white/90 backdrop-blur-2xl rounded-xl border border-white/20 shadow-2xl overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-2xl rounded-[12px] border border-white/20 shadow-2xl overflow-hidden">
               <div className="px-8 pt-8">
                 <div className="text-center">
                   <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -100,7 +100,7 @@ export default function AuthComponent() {
                           onChange={(e) => setEmail(e.target.value)}
                           required
                           placeholder="Enter your email"
-                          className="block w-full pl-10 pr-3 py-3 border border-black/30 bg-white/20 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                          className="block w-full pl-10 pr-3 py-3 border border-black/30 bg-white/20 rounded-[12px] text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
                         />
                       </div>
                     </Form.Control>
@@ -133,7 +133,7 @@ export default function AuthComponent() {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             placeholder="Enter your password"
-                            className="block w-full pl-10 pr-12 py-3 border border-black/30 bg-white/20 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                            className="block w-full pl-10 pr-12 py-3 border border-black/30 bg-white/20 rounded-[12px] text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
                           />
                           <PasswordToggleField.Toggle className="absolute inset-y-0 right-0 pr-3 flex items-center">
                             <PasswordToggleField.Icon
@@ -200,7 +200,7 @@ export default function AuthComponent() {
                   <Form.Submit asChild>
                     <button
                       type="submit"
-                      className="w-full bg-purple-700 text-white py-3 px-4 rounded-lg font-medium hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full bg-purple-700 text-white py-3 px-4 rounded-[12px] font-medium hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                     >
                       Sign In
                     </button>
@@ -217,7 +217,7 @@ export default function AuthComponent() {
 
                 <button
                   onClick={handleGoogleSignIn}
-                  className="w-full bg-white/50 border border-white/30 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-3"
+                  className="w-full bg-white/50 border border-white/30 text-gray-700 py-3 px-4 rounded-[12px] font-medium hover:bg-white/70 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-3"
                 >
                   <GoogleIcon />
                   Sign in with Google

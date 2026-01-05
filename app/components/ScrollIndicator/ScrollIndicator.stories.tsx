@@ -29,7 +29,7 @@ export const Default: Story = {
           {Array.from({ length: 10 }).map((_, i) => (
             <div
               key={i}
-              className="bg-white/10 backdrop-blur-sm p-8 rounded-lg"
+              className="bg-white/10 backdrop-blur-sm p-8 rounded-[12px]"
             >
               <h2 className="text-2xl font-semibold text-white mb-2">
                 Section {i + 1}

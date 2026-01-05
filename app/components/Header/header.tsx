@@ -98,7 +98,7 @@ export default function Header() {
     <>
       <header className="fixed left-1/2 top-6 z-50 w-11/12 max-w-6xl -translate-x-1/2">
         <NavigationMenu.Root className="relative">
-          <NavigationMenu.List className="flex items-center justify-between rounded-xl border border-palette-gray-20 bg-palette-white px-8 py-3 shadow-2xl transition-all duration-500">
+          <NavigationMenu.List className="flex items-center justify-between rounded-[12px] border border-palette-gray-20 bg-palette-white px-8 py-3 shadow-2xl transition-all duration-500">
             <div className="flex items-center gap-3">
               <Link
                 href="/"
@@ -126,7 +126,7 @@ export default function Header() {
                     <NavigationMenu.Link asChild>
                       <Link
                         href={item.href}
-                        className={`group relative px-4 py-2 text-[17px] font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2 rounded-md ${
+                        className={`group relative px-4 py-2 text-[17px] font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2 rounded-[12px] ${
                           item.isSpecial
                             ? "text-palette-purple-70 bg-palette-purple-20 hover:bg-palette-purple-25 hover:text-palette-purple-80"
                             : isActive(item.href)
@@ -158,7 +158,7 @@ export default function Header() {
                     href="https://github.com/martinlcam"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center rounded-lg p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
+                    className="flex items-center justify-center rounded-[12px] p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
                     aria-label="GitHub"
                   >
                     <GitHubLogoIcon className="h-6 w-6" />
@@ -172,7 +172,7 @@ export default function Header() {
                     href="https://www.linkedin.com/in/martin-cam-542909295"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center rounded-lg p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
+                    className="flex items-center justify-center rounded-[12px] p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
                     aria-label="LinkedIn"
                   >
                     <LinkedInLogoIcon className="h-6 w-6" />
@@ -186,7 +186,7 @@ export default function Header() {
                     href="https://www.instagram.com/_martincam_/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center rounded-lg p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
+                    className="flex items-center justify-center rounded-[12px] p-2 text-palette-gray-60 transition-all duration-200 hover:bg-palette-purple-20 hover:text-palette-purple-60 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2"
                     aria-label="Instagram"
                   >
                     <InstagramLogoIcon className="h-6 w-6" />
@@ -196,7 +196,7 @@ export default function Header() {
             </div>
 
             <button
-              className="md:hidden relative p-2.5 rounded-xl bg-palette-white hover:bg-palette-gray-10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2 group z-50"
+              className="md:hidden relative p-2.5 rounded-[12px] bg-palette-white hover:bg-palette-gray-10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-palette-purple-60 focus:ring-offset-2 group z-50"
               onClick={(e) => {
                 e.stopPropagation();
                 toggleMobileMenu();
@@ -234,7 +234,7 @@ export default function Header() {
 
       <div
         ref={menuRef}
-        className={`fixed left-1/2 top-24 z-40 w-11/12 max-w-6xl -translate-x-1/2 rounded-lg border border-palette-gray-20 bg-palette-white shadow-2xl md:hidden transition-all duration-300 ease-out ${
+        className={`fixed left-1/2 top-24 z-40 w-11/12 max-w-6xl -translate-x-1/2 rounded-[12px] border border-palette-gray-20 bg-palette-white shadow-2xl md:hidden transition-all duration-300 ease-out ${
           isMobileMenuOpen
             ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
             : "opacity-0 -translate-y-4 scale-95 pointer-events-none"
@@ -250,7 +250,7 @@ export default function Header() {
               )}
               <Link
                 href={item.href}
-                className={`px-4 py-3 text-[17px] font-medium rounded-md transition-colors duration-200 ${
+                className={`px-4 py-3 text-[17px] font-medium rounded-[12px] transition-colors duration-200 ${
                   item.isSpecial
                     ? "text-palette-purple-70 bg-palette-purple-20 hover:bg-palette-purple-25 hover:text-palette-purple-80 text-center"
                     : isActive(item.href)
@@ -268,7 +268,7 @@ export default function Header() {
               href="https://github.com/martinlcam"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
+              className="flex items-center justify-center rounded-[12px] p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
               aria-label="GitHub"
               onClick={closeMobileMenu}
             >
@@ -278,7 +278,7 @@ export default function Header() {
               href="https://www.linkedin.com/in/martin-cam-542909295"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
+              className="flex items-center justify-center rounded-[12px] p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
               aria-label="LinkedIn"
               onClick={closeMobileMenu}
             >
@@ -288,7 +288,7 @@ export default function Header() {
               href="https://www.instagram.com/_martincam_/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-lg p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
+              className="flex items-center justify-center rounded-[12px] p-3 text-palette-gray-60 hover:bg-palette-purple-20 hover:text-palette-purple-60 transition-all duration-200"
               aria-label="Instagram"
               onClick={closeMobileMenu}
             >

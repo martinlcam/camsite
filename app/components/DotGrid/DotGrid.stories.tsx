@@ -47,7 +47,7 @@ export const Default: Story = {
     <div className="relative h-screen w-full bg-palette-white">
       <DotGrid {...args} className="h-full w-full" />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="bg-palette-white/80 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+        <div className="bg-palette-white/80 backdrop-blur-sm p-8 rounded-[12px] shadow-lg">
           <h2 className="text-2xl font-bold text-palette-gray-100 mb-2">
             Interactive Dot Grid
           </h2>

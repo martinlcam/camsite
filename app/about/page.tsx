@@ -25,7 +25,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2 space-y-8">
-              <div className="bg-palette-white rounded-2xl p-8 shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300">
+              <div className="bg-palette-white rounded-[12px] p-8 shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300">
                 <h2 className="text-3xl font-bold text-palette-gray-100 mb-4">
                   Bio
                 </h2>
@@ -34,7 +34,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="bg-palette-white rounded-2xl p-8 shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300">
+              <div className="bg-palette-white rounded-[12px] p-8 shadow-xl border border-palette-gray-20 hover:shadow-2xl transition-all duration-300">
                 <h2 className="text-3xl font-bold text-palette-gray-100 mb-6">
                   Skills
                 </h2>
@@ -62,14 +62,14 @@ export default function About() {
               </div> */}
 
               {/* Experience Card */}
-              <div className="bg-palette-white rounded-2xl p-6 shadow-xl border border-palette-gray-20">
+              <div className="bg-palette-white rounded-[12px] p-6 shadow-xl border border-palette-gray-20">
                 <h3 className="text-xl font-bold text-palette-gray-100 mb-4">
                   Experience
                 </h3>
                 <div className="space-y-4"></div>
               </div>
 
-              <div className="bg-palette-white rounded-2xl p-6 shadow-xl border border-palette-gray-20">
+              <div className="bg-palette-white rounded-[12px] p-6 shadow-xl border border-palette-gray-20">
                 <h3 className="text-xl font-bold text-palette-gray-100 mb-4">
                   Education
                 </h3>
@@ -78,7 +78,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bg-palette-white rounded-2xl p-8 shadow-xl border border-palette-gray-20">
+          <div className="bg-palette-white rounded-[12px] p-8 shadow-xl border border-palette-gray-20">
             <h2 className="text-3xl font-bold text-palette-gray-100 mb-8">
               Timeline
             </h2>
@@ -88,7 +88,7 @@ export default function About() {
               <div className="space-y-8">
                 <div className="relative pl-12">
                   <div className="absolute left-2 top-2 w-4 h-4 bg-palette-purple-60 rounded-full border-4 border-palette-white"></div>
-                  <div className="bg-palette-gray-10 rounded-lg p-4 shadow-md">
+                  <div className="bg-palette-gray-10 rounded-[12px] p-4 shadow-md">
                     <div className="text-sm text-palette-purple-60 font-semibold mb-1">
                       Date
                     </div>
