@@ -220,8 +220,12 @@ export default function DebugMenu() {
     }
     
     window.fetch = async (...args: Parameters<typeof fetch>) => {
-      const url = typeof args[0] === "string" ? args[0] : args[0].url;
-      const method = args[1]?.method || "GET";
+      const url = typeof args[0] === "string" 
+        ? args[0] 
+        : args[0] instanceof Request 
+          ? args[0].url 
+          : args[0].href || String(args[0]);
+      const method = args[1]?.method || (args[0] instanceof Request ? args[0].method : undefined) || "GET";
       const startTime = performance.now();
       const requestId = `${Date.now()}-${Math.random()}`;
 
