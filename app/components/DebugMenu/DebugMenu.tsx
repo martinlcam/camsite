@@ -138,7 +138,7 @@ export default function DebugMenu() {
             request: Math.round(navigation.responseStart - navigation.requestStart),
             response: Math.round(navigation.responseEnd - navigation.responseStart),
             domProcessing: Math.round(navigation.domInteractive - navigation.responseEnd),
-            load: Math.round(navigation.loadEventEnd - navigation.navigationStart),
+            load: Math.round(navigation.loadEventEnd - navigation.startTime),
           } : null,
           paint: paint ? {
             fcp: paint.find(p => p.name === "first-contentful-paint")?.startTime,
