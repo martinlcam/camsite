@@ -219,7 +219,7 @@ export default function DebugMenu() {
       originalFetch.current = window.fetch.bind(window);
     }
     
-    window.fetch = async (...args: any[]) => {
+    window.fetch = async (...args: Parameters<typeof fetch>) => {
       const url = typeof args[0] === "string" ? args[0] : args[0].url;
       const method = args[1]?.method || "GET";
       const startTime = performance.now();
@@ -239,7 +239,7 @@ export default function DebugMenu() {
       });
 
       try {
-        const response = await originalFetch.current!(...args);
+        const response = await originalFetch.current!(args[0], args[1]);
         const endTime = performance.now();
         const duration = Math.round(endTime - startTime);
 
@@ -278,7 +278,7 @@ export default function DebugMenu() {
         ));
       }
 
-      return originalFetch.current!(...args);
+      return originalFetch.current!(args[0], args[1]);
     };
 
     interceptorsSetup.current = true;
