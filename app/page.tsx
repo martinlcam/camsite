@@ -3,6 +3,7 @@ import Ballpit from "./components/BallPit/BallPit";
 import Header from "./components/Header/header";
 import GridBackground from "./components/GridBackground/GridBackground";
 import { Text } from "@radix-ui/themes";
+import MorphingTechIcon from "./components/MorphingTechIcon/MorphingTechIcon";
 
 export default function Home() {
   return (
@@ -58,6 +59,10 @@ export default function Home() {
               CSS but I also have experience with ExpressJS, Drizzle ORM,
               PostgreSQL, and Docker.
             </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-palette-gray-20">
+            <MorphingTechIcon />
           </div>
         </div>
       </div>
